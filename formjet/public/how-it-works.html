@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How It Works - FormJet</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Navigation Bar -->
+  <nav class="bg-gray-800 text-white p-4">
+    <div class="max-w-4xl mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-blue-400">FormJet</a>
+      <div class="space-x-4">
+        <a href="index.html" class="hover:text-blue-400 transition duration-300">Home</a>
+        <a href="how-it-works.html" class="text-blue-400 font-semibold">How It Works</a>
+        <a href="example-form.html" class="hover:text-blue-400 transition duration-300">Example Form</a>
+        <a href="signup.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Section -->
+  <div class="max-w-3xl mx-auto p-6">
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-blue-600 mb-2">How It Works</h1>
+      <p class="text-lg text-gray-600">Learn how to set up FormJet and start sending emails in minutes.</p>
+    </div>
+
+    <!-- Steps Section -->
+    <h2 class="text-2xl font-semibold mt-8 mb-4">📋 Step-by-Step Guide</h2>
+    <ol class="space-y-6">
+      <li class="flex items-start">
+        <i class="fas fa-code text-blue-600 text-2xl mr-4 mt-1"></i>
+        <div>
+          <h3 class="text-lg font-semibold">Create Your Form</h3>
+          <p class="text-gray-700">Create a form in your HTML with <code class="bg-gray-200 px-1 rounded">name</code>, <code class="bg-gray-200 px-1 rounded">email</code>, and <code class="bg-gray-200 px-1 rounded">message</code> fields.</p>
+        </div>
+      </li>
+      <li class="flex items-start">
+        <i class="fas fa-link text-blue-600 text-2xl mr-4 mt-1"></i>
+        <div>
+          <h3 class="text-lg font-semibold">Set the Form Action</h3>
+          <p class="text-gray-700">Set the <code class="bg-gray-200 px-1 rounded">action</code> attribute to point to <code class="bg-gray-200 px-1 rounded">/send/yourUserId</code> and method to <code class="bg-gray-200 px-1 rounded">POST</code>.</p>
+        </div>
+      </li>
+      <li class="flex items-start">
+        <i class="fas fa-paper-plane text-blue-600 text-2xl mr-4 mt-1"></i>
+        <div>
+          <h3 class="text-lg font-semibold">Form Submission</h3>
+          <p class="text-gray-700">Your users submit the form, and we send the data to your inbox.</p>
+        </div>
+      </li>
+      <li class="flex items-start">
+        <i class="fas fa-cog text-blue-600 text-2xl mr-4 mt-1"></i>
+        <div>
+          <h3 class="text-lg font-semibold">Configure Your Inbox</h3>
+          <p class="text-gray-700">Configure your recipient email in our dashboard or system backend.</p>
+        </div>
+      </li>
+    </ol>
+
+    <!-- Code Example Section -->
+    <h2 class="text-2xl font-semibold mt-12 mb-4">💻 Code Example</h2>
+    <div class="bg-gray-100 p-4 rounded-lg mb-8">
+      <pre class="text-sm text-gray-800 overflow-x-auto">
+&lt;form action="/send/yourUserId" method="POST"&gt;
+  &lt;label for="name"&gt;Name&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" required&gt;
+  
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+  
+  &lt;label for="message"&gt;Message&lt;/label&gt;
+  &lt;textarea id="message" name="message" required&gt;&lt;/textarea&gt;
+  
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</pre>
+    </div>
+
+    <!-- Getting Started Section -->
+    <h2 class="text-2xl font-semibold mt-12 mb-4">🚀 Getting Started</h2>
+    <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+      <ol class="list-decimal ml-6 space-y-2 text-gray-700">
+        <li>Sign up for a FormJet account at <a href="signup.html" class="text-blue-500 hover:underline">signup page</a>.</li>
+        <li>Retrieve your unique <code class="bg-gray-200 px-1 rounded">userId</code> from the dashboard.</li>
+        <li>Configure your recipient email address in the dashboard settings.</li>
+        <li>Add the form to your website using the code example above.</li>
+        <li>Test your form by submitting a message and checking your inbox.</li>
+      </ol>
+    </div>
+
+    <!-- Troubleshooting Tips Section -->
+    <h2 class="text-2xl font-semibold mt-12 mb-4">🛠️ Troubleshooting Tips</h2>
+    <div class="space-y-4 mb-12">
+      <div class="bg-white p-4 rounded-lg shadow-md">
+        <h3 class="text-lg font-semibold mb-2">Emails not arriving?</h3>
+        <p class="text-gray-700">Ensure your <code class="bg-gray-200 px-1 rounded">userId</code> is correct and that the recipient email is configured in the dashboard.</p>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-md">
+        <h3 class="text-lg font-semibold mb-2">Form not submitting?</h3>
+        <p class="text-gray-700">Check that your form’s <code class="bg-gray-200 px-1 rounded">action</code> and <code class="bg-gray-200 px-1 rounded">method</code> are set correctly, and all required fields are included.</p>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-md">
+        <h3 class="text-lg font-semibold mb-2">Reached email limit?</h3>
+        <p class="text-gray-700">If you’re on the Free Plan, you may have reached the 100 emails/month limit. Upgrade to the Pro Plan for unlimited emails.</p>
+      </div>
+    </div>
+
+    <!-- Call-to-Action Section -->
+    <div class="bg-blue-600 text-white text-center p-8 rounded-lg mb-12">
+      <h2 class="text-2xl font-semibold mb-4">Ready to Get Started?</h2>
+      <p class="mb-6">Set up your forms with FormJet and start receiving emails today.</p>
+      <a href="signup.html" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-gray-200 transition duration-300 font-semibold">Sign Up Now</a>
+    </div>
+
+    <!-- Back to Home Link -->
+    <div class="mb-8">
+      <a href="index.html" class="text-blue-500 hover:underline">← Back to Home</a>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="bg-gray-800 text-white p-6">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center">
+      <p>© 2025 FormJet. All rights reserved.</p>
+      <div class="space-x-4 mt-4 md:mt-0">
+        <a href="https://github.com/formjet" class="hover:underline">GitHub</a>
+        <a href="terms.html" class="hover:underline">Terms of Service</a>
+        <a href="privacy.html" class="hover:underline">Privacy Policy</a>
+        <a href="contact.html" class="hover:underline">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

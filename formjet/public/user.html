@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FormJet Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .modal {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .modal-hidden {
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+    }
+    .modal-visible {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-blue-200 to-blue-20 min-h-screen text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full bg-blue-190">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <button id="sidebar-toggle" class="lg:hidden text-gray-700">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <span class="text-2xl font-bold text-blue-600">FormJet</span>
+      </div>
+      <div class="hidden md:flex items-center space-x-6">
+        <span class="text-sm font-medium">CANOL OKOTH</span>
+        <a href="#" class="text-sm text-blue-600 hover:text-blue-700">Forms</a>
+        <a href="#" class="text-sm text-blue-600 hover:text-blue-700">Account</a>
+        <img src="https://via.placeholder.com/20" class="w-5 h-5" alt="Bell" />
+        <img src="https://via.placeholder.com/20" class="w-5 h-5" alt="Logout" />
+      </div>
+    </div>
+  </nav>
+
+  <!-- Layout -->
+  <div class="pt-16 flex flex-col lg:flex-row max-w-7xl mx-auto">
+
+    <!-- Main Content -->
+    <main class="flex-1 p-4 md:p-6">
+      <h2 class="text-xl md:text-2xl font-semibold mb-4">Second Form</h2>
+
+      <div class="flex flex-wrap gap-4 mb-6 text-sm">
+        <a href="#" class="text-blue-600 border-b-2 border-blue-600 pb-1 hover:text-blue-700">Integration</a>
+        <a href="#" class="text-gray-600 hover:text-gray-800">Submissions</a>
+      </div>
+
+      <!-- Endpoint -->
+      <div class="bg-white rounded-xl shadow p-4 md:p-6 mb-6">
+        <h3 class="text-xs font-semibold text-gray-500 uppercase mb-2">Form Endpoint</h3>
+        <div class="flex flex-col sm:flex-row gap-3 mb-3">
+          <input type="text" value="https://formjet.onrender.com/send/12345" readonly
+            class="flex-1 p-2 text-sm bg-gray-100 rounded border-none focus:ring-2 ring-blue-300" />
+          <button class="px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700">Copy</button>
+        </div>
+        <p class="text-sm text-gray-500">Use this in your form's action attribute. Method should be POST.</p>
+      </div>
+
+<!-- Code Section -->
+<div class="bg-white rounded-xl shadow p-4 md:p-6 mb-6">
+  <h3 class="text-xs font-semibold text-gray-500 uppercase mb-4">HTML Form Example</h3>
+  <div class="p-4 bg-gray-200 text-gray-800 rounded-lg max-h-96 overflow-y-auto font-mono text-sm">
+    <span class="text-green-700">&lt;!-- Modify this form HTML and place wherever you want your form --&gt;</span><br>
+    <span class="text-blue-600">&lt;form</span> <span class="text-gray-800">action=</span><span class="text-orange-600">"https://formjet.onrender.com/send/12345"</span> <span class="text-gray-800">method=</span><span class="text-orange-600">"POST"</span><span class="text-blue-600">&gt;</span><br>
+
+    <span class="text-blue-600">&nbsp;&nbsp;&lt;label</span> <span class="text-gray-800">for=</span><span class="text-orange-600">"name"</span><span class="text-blue-600">&gt;</span>
+    <span class="text-gray-800">Your name:</span>
+    <span class="text-blue-600">&lt;/label&gt;</span><br>
+    <span class="text-blue-600">&nbsp;&nbsp;&lt;input</span> <span class="text-gray-800">type=</span><span class="text-orange-600">"text"</span> <span class="text-gray-800">name=</span><span class="text-orange-600">"name"</span> <span class="text-gray-800">id=</span><span class="text-orange-600">"name"</span><span class="text-blue-600">&gt;</span><br><br>
+
+    <span class="text-blue-600">&nbsp;&nbsp;&lt;label</span> <span class="text-gray-800">for=</span><span class="text-orange-600">"email"</span><span class="text-blue-600">&gt;</span>
+    <span class="text-gray-800">Your email:</span>
+    <span class="text-blue-600">&lt;/label&gt;</span><br>
+    <span class="text-blue-600">&nbsp;&nbsp;&lt;input</span> <span class="text-gray-800">type=</span><span class="text-orange-600">"email"</span> <span class="text-gray-800">name=</span><span class="text-orange-600">"email"</span> <span class="text-gray-800">id=</span><span class="text-orange-600">"email"</span><span class="text-blue-600">&gt;</span><br><br>
+
+    <span class="text-blue-600">&nbsp;&nbsp;&lt;label</span> <span class="text-gray-800">for=</span><span class="text-orange-600">"message"</span><span class="text-blue-600">&gt;</span>
+    <span class="text-gray-800">Your message:</span>
+    <span class="text-blue-600">&lt;/label&gt;</span><br>
+    <span class="text-blue-600">&nbsp;&nbsp;&lt;textarea</span> <span class="text-gray-800">name=</span><span class="text-orange-600">"message"</span> <span class="text-gray-800">id=</span><span class="text-orange-600">"message"</span><span class="text-blue-600">&gt;&lt;/textarea&gt;</span><br><br>
+
+    <span class="text-green-700">&nbsp;&nbsp;&lt;!-- your other form fields go here --&gt;</span><br>
+    <span class="text-blue-600">&nbsp;&nbsp;&lt;button</span> <span class="text-gray-800">type=</span><span class="text-orange-600">"submit"</span><span class="text-blue-600">&gt;</span><span class="text-gray-800">Send</span><span class="text-blue-600">&lt;/button&gt;</span><br>
+    <span class="text-blue-600">&lt;/form&gt;</span>
+  </div>
+</div>
+
+
+      
+      <!-- Submissions -->
+      <div class="bg-white rounded-xl shadow p-4 md:p-6">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xs font-semibold text-gray-500 uppercase">Recent Submissions</h3>
+          <a href="#" class="text-sm text-blue-600 hover:text-blue-700">View All</a>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm text-left">
+            <thead class="bg-gray-50 text-gray-500 uppercase text-xs">
+              <tr>
+                <th class="px-4 py-2">Submission ID</th>
+                <th class="px-4 py-2">Date</th>
+                <th class="px-4 py-2">Email</th>
+                <th class="px-4 py-2">Message</th>
+                <th class="px-4 py-2">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-4 py-2">SUB12345</td>
+                <td class="px-4 py-2">2025-04-20 14:30</td>
+                <td class="px-4 py-2">user1@example.com</td>
+                <td class="px-4 py-2 truncate max-w-xs">Interested in your services...</td>
+                <td class="px-4 py-2 text-blue-600 hover:text-blue-700"><a href="#">View</a></td>
+              </tr>
+              <tr class="border-b hover:bg-gray-50">
+                <td class="px-4 py-2">SUB12346</td>
+                <td class="px-4 py-2">2025-04-19 09:15</td>
+                <td class="px-4 py-2">user2@example.com</td>
+                <td class="px-4 py-2 truncate max-w-xs">Please provide more details...</td>
+                <td class="px-4 py-2 text-blue-600 hover:text-blue-700"><a href="#">View</a></td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-4 py-2">SUB12347</td>
+                <td class="px-4 py-2">2025-04-18 16:45</td>
+                <td class="px-4 py-2">user3@example.com</td>
+                <td class="px-4 py-2 truncate max-w-xs">Question about pricing...</td>
+                <td class="px-4 py-2 text-blue-600 hover:text-blue-700"><a href="#">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+<aside id="sidebar"
+class="fixed top-0 right-0 w-72 h-full bg-white shadow transform translate-x-full lg:translate-x-0 lg:static lg:h-auto p-4 lg:p-6 transition-transform z-30">
+<button id="add-new-btn"
+  class="w-full mb-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-300 transition-all">
+  + Add New
+</button>
+<ul id="form-list" class="space-y-3 text-sm">
+  <li class="group rounded-lg p-2 hover:bg-blue-50 hover:scale-105 transition-all cursor-pointer" onclick="selectForm('FORM123', 'Sells Website')">
+    <span class="text-xs text-gray-500">FORM123</span><br />
+    <span class="text-gray-700 group-hover:text-blue-600 transition-colors">Sells Website</span>
+  </li>
+  <li class="group rounded-lg p-2 hover:bg-blue-50 hover:scale-105 transition-all cursor-pointer" onclick="selectForm('FORM456', 'Portfolio Website')">
+    <span class="text-xs text-gray-500">FORM456</span><br />
+    <span class="text-gray-700 group-hover:text-blue-600 transition-colors">Portfolio Website</span>
+  </li>
+</ul>
+</aside>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal"
+    class="modal modal-hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-40">
+    <div class="bg-white p-6 rounded-xl shadow-lg w-full max-w-md mx-4">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-lg font-semibold">Create New Form</h3>
+        <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <form id="new-form-form" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium mb-1" for="form-name">Name</label>
+          <input id="form-name" type="text" name="name"
+            class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-300" required />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1" for="form-purpose">Purpose</label>
+          <textarea id="form-purpose" name="purpose" rows="3"
+            class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-300" required></textarea>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1" for="form-email">Recipient Email</label>
+          <input id="form-email" type="email" name="email"
+            class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-300" required />
+        </div>
+        <div class="flex justify-end space-x-2">
+          <button type="button" id="cancel-modal"
+            class="px-4 py-2 bg-gray-100 text-sm rounded hover:bg-gray-200">Cancel</button>
+          <button type="submit"
+            class="px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const modal = document.getElementById('modal');
+    const addNewBtn = document.getElementById('add-new-btn');
+    const closeModal = document.getElementById('close-modal');
+    const cancelModal = document.getElementById('cancel-modal');
+    const form = document.getElementById('new-form-form');
+    const formList = document.querySelector('#sidebar ul');
+
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('translate-x-full');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+        sidebar.classList.add('translate-x-full');
+      }
+    });
+
+    addNewBtn.addEventListener('click', () => {
+      modal.classList.remove('modal-hidden');
+      modal.classList.add('modal-visible');
+    });
+
+    const hideModal = () => {
+      modal.classList.remove('modal-visible');
+      modal.classList.add('modal-hidden');
+    };
+
+    closeModal.addEventListener('click', hideModal);
+    cancelModal.addEventListener('click', hideModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) hideModal();
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = form.name.value;
+      const purpose = form.purpose.value;
+
+      const newItem = document.createElement('li');
+      newItem.innerHTML = `<span class="text-xs text-gray-500">${Date.now()}</span><br>${name}`;
+      formList.appendChild(newItem);
+      form.reset();
+      hideModal();
+    });
+
+    function selectForm(formId, formName) {
+      // Placeholder function for handling form selection
+      console.log(`Selected Form: ${formId} - ${formName}`);
+      // Example: Navigate to form details page or update main content
+      // window.location.href = `/forms/${formId}`;
+      // Or trigger a UI update, e.g., load form details in the main content area
+      alert(`Selected: ${formName} (${formId})`); // Temporary alert for demo
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FormJet - Simple Email Sending Platform</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+  <!-- Navigation Bar -->
+  <nav class="bg-blue-200 text-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <!-- Logo and Links -->
+        <div class="flex items-center">
+          <div class="flex-shrink-0 text-2xl font-bold text-blue-600">
+            Form<span class="text-indigo-500">Jet</span>
+          </div>
+          <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <a href="#" class="text-gray-900 font-medium hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-500 px-1 pt-1">Home</a>
+            <a href="#" class="text-gray-900 font-medium hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-500 px-1 pt-1">Features</a>
+            <a href="#" class="text-gray-900 font-medium hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-500 px-1 pt-1">Documentation</a>
+            <a href="#" class="text-gray-900 font-medium hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-500 px-1 pt-1">Support</a>
+          </div>
+        </div>
+  
+        <!-- Desktop buttons -->
+        <div class="hidden sm:ml-6 sm:flex sm:items-center">
+          <a href="#" class="text-gray-800 hover:text-gray-900 px-3 py-2 text-sm font-medium">Sign in</a>
+          <a href="#" class="ml-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign up</a>
+        </div>
+  
+        <!-- Mobile menu button -->
+        <div class="-mr-2 flex items-center sm:hidden">
+          <button id="mobile-menu-toggle" class="bg-white p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none">
+            <i class="fas fa-bars text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Mobile Fullscreen Menu -->
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-white z-50 hidden flex-col p-6 space-y-4 sm:hidden">
+      <div class="flex justify-between items-center">
+        <div class="text-2xl font-bold text-blue-600">Form<span class="text-indigo-500">Jet</span></div>
+        <button id="mobile-menu-close" class="text-gray-600 hover:text-gray-900 text-2xl">
+          &times;
+        </button>
+      </div>
+      <a href="#" class="block text-lg font-medium text-gray-800 hover:text-indigo-600">Home</a>
+  
+      <!-- Dropdown Item -->
+      <div class="space-y-2">
+        <button class="w-full text-left text-lg font-medium text-gray-800 hover:text-indigo-600" onclick="toggleDropdown()">Features ▼</button>
+        <div id="dropdown-menu" class="ml-4 space-y-2 hidden">
+          <a href="#" class="block text-gray-700 hover:text-indigo-500">Feature 1</a>
+          <a href="#" class="block text-gray-700 hover:text-indigo-500">Feature 2</a>
+          <a href="#" class="block text-gray-700 hover:text-indigo-500">Feature 3</a>
+        </div>
+      </div>
+  
+      <a href="#" class="block text-lg font-medium text-gray-800 hover:text-indigo-600">Documentation</a>
+      <a href="#" class="block text-lg font-medium text-gray-800 hover:text-indigo-600">Support</a>
+      <a href="#" class="block text-lg font-medium text-gray-800 hover:text-indigo-600">Sign in</a>
+      <a href="#" class="block bg-indigo-600 text-white text-center px-4 py-2 rounded-md font-medium hover:bg-indigo-700">Sign up</a>
+    </div>
+  </nav>
+  
+
+<!-- Hero Section -->
+<div class="bg-gradient-to-b from-blue-200 via-indigo-50 to-white min-h-screen flex items-start pt-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full" style="margin-top: 70px;">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-5xl font-extrabold text-gray-900 sm:text-6xl tracking-tight lg:text-7xl leading-tight">
+          Email sending made <span class="text-indigo-600">simple</span>.
+        </h1>
+        <p class="mt-6 text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-prose">
+          Send beautiful emails, track performance, and grow your business with FormJet's powerful email platform.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-md shadow-md text-base sm:text-lg">
+            Get Started
+          </a>
+          <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50">
+            Watch Demo <i class="fas fa-play-circle ml-2"></i>
+          </a>
+        </div>
+      </div>
+      <div class="mt-10 md:mt-0">
+        <img 
+          src="images/Emails-bro.svg" 
+          alt="FormJet Dashboard" 
+          class="rounded-lg w-full max-w-md md:max-w-lg lg:max-w-xl mx-auto md:mx-0"
+        >
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Features Section -->
+  <div class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-base font-semibold text-indigo-600 tracking-wide uppercase">Features</h2>
+        <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">Everything you need to succeed</p>
+        <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">Our platform provides all the tools you need to create, send, and analyze your email campaigns.</p>
+      </div>
+
+      <div class="mt-16">
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="pt-6">
+            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+              <div class="-mt-6">
+                <div>
+                  <span class="inline-flex items-center justify-center p-3 bg-indigo-500 rounded-md shadow-lg">
+                    <i class="fas fa-envelope text-white text-xl"></i>
+                  </span>
+                </div>
+                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Beautiful Templates</h3>
+                <p class="mt-5 text-base text-gray-500">Choose from hundreds of professionally designed templates or create your own with our easy-to-use editor.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6">
+            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+              <div class="-mt-6">
+                <div>
+                  <span class="inline-flex items-center justify-center p-3 bg-indigo-500 rounded-md shadow-lg">
+                    <i class="fas fa-chart-line text-white text-xl"></i>
+                  </span>
+                </div>
+                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Advanced Analytics</h3>
+                <p class="mt-5 text-base text-gray-500">Track opens, clicks, and conversions with real-time analytics to optimize your campaigns.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6">
+            <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+              <div class="-mt-6">
+                <div>
+                  <span class="inline-flex items-center justify-center p-3 bg-indigo-500 rounded-md shadow-lg">
+                    <i class="fas fa-users text-white text-xl"></i>
+                  </span>
+                </div>
+                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Audience Segmentation</h3>
+                <p class="mt-5 text-base text-gray-500">Target the right people with powerful segmentation tools and personalization features.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+      
+      <!-- Form Mockup -->
+      <div class="w-full md:w-1/2 flex justify-center mb-12 md:mb-0">
+        <div class="bg-gray-900 text-white p-6 rounded-2xl shadow-lg w-full max-w-md">
+          <form>
+            <label class="block mb-4">
+              <span class="text-sm text-gray-300">Name</span>
+              <input type="text" placeholder="Name" class="mt-1 block w-full rounded-md bg-gray-800 text-white border-none px-4 py-2 placeholder-gray-500" />
+            </label>
+            <label class="block mb-4">
+              <span class="text-sm text-gray-300">Email</span>
+              <input type="email" placeholder="Email" class="mt-1 block w-full rounded-md bg-gray-800 text-white border-none px-4 py-2 placeholder-gray-500" />
+            </label>
+            <label class="block mb-4">
+              <span class="text-sm text-gray-300">Message</span>
+              <textarea placeholder="Message..." class="mt-1 block w-full rounded-md bg-gray-800 text-white border-none px-4 py-2 placeholder-gray-500"></textarea>
+            </label>
+            <button class="mt-2 w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+  
+      <!-- How It Works Steps -->
+      <div class="w-full md:w-1/2 md:pl-10 relative">
+        <h2 class="text-3xl font-extrabold text-gray-900 mb-6">How it works</h2>
+        <p class="text-gray-600 mb-8">
+          Here’s what happens after your form is submitted using JavaScript forms, HTML forms, or <strong>Formbutton</strong>.
+        </p>
+      
+        <!-- Steps -->
+        <div class="relative space-y-10 border-l-2 border-gray-200 pl-6">
+          
+          <!-- Step 1 -->
+          <div class="flex items-start gap-4">
+            <div class="bg-indigo-100 text-indigo-600 p-2 rounded-full">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">Spam blocked, data validated</h3>
+              <p class="text-gray-600 text-sm">
+                We validate your data server‑side and use machine learning to protect you from spam.
+              </p>
+            </div>
+          </div>
+      
+          <!-- Step 2 -->
+          <div class="flex items-start gap-4">
+            <div class="bg-indigo-100 text-indigo-600 p-2 rounded-full">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">Email notifications and auto‑responses are sent</h3>
+              <p class="text-gray-600 text-sm">
+                Our email templates are fully customizable.
+              </p>
+            </div>
+          </div>
+      
+          <!-- Step 3 -->
+          <div class="flex items-start gap-4">
+            <div class="bg-indigo-100 text-indigo-600 p-2 rounded-full">
+              <i class="fas fa-list"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">Submissions are saved to the Formspree Inbox</h3>
+              <p class="text-gray-600 text-sm">
+                View submissions, see daily analytics reports, and export to CSV or JSON.
+              </p>
+            </div>
+          </div>
+      
+          <!-- Step 4 -->
+          <div class="flex items-start gap-4">
+            <div class="bg-indigo-100 text-indigo-600 p-2 rounded-full">
+              <i class="fas fa-share-alt"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900">3rd party integrations are triggered</h3>
+              <p class="text-gray-600 text-sm">
+                With our direct integrations, we’ll get your data where it needs to be – no Zapier required.
+              </p>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+      
+  
+    </div>
+  </section>
+  
+
+  <!-- Modern White Footer -->
+<footer class="bg-white">
+  <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Brand + Blurb -->
+      <div>
+        <a href="#" class="text-2xl font-bold text-indigo-600">Form<span class="text-gray-900">Jet</span></a>
+        <p class="mt-4 text-gray-500">
+          Powerful email platform to send, track, and grow.
+        </p>
+      </div>
+
+      <!-- Column 1 -->
+      <div>
+        <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Product</h4>
+        <ul class="mt-4 space-y-3">
+          <li><a href="#" class="text-gray-600 hover:text-gray-900">Features</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-gray-900">Pricing</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-gray-900">Templates</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 2 -->
+      <div>
+        <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Resources</h4>
+        <ul class="mt-4 space-y-3">
+          <li><a href="#" class="text-gray-600 hover:text-gray-900">Documentation</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-gray-900">Guides</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-gray-900">API Status</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter Signup -->
+      <div>
+        <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Stay up to date</h4>
+        <p class="mt-4 text-gray-500 text-sm">Get the latest news and updates straight to your inbox.</p>
+        <form class="mt-4 flex">
+          <input
+            type="email"
+            placeholder="Your email"
+            class="w-full rounded-l-md border border-gray-300 px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+          <button
+            type="submit"
+            class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-r-md font-medium"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="mt-12 border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-sm text-gray-500">&copy; 2025 SpacyFire. All rights reserved.</p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="#" class="text-gray-400 hover:text-gray-500" aria-label="Twitter">
+          <i class="fab fa-twitter fa-lg"></i>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-gray-500" aria-label="Facebook">
+          <i class="fab fa-facebook-f fa-lg"></i>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-gray-500" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in fa-lg"></i>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-gray-500" aria-label="Instagram">
+          <i class="fab fa-instagram fa-lg"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script>
+    const toggleBtn = document.getElementById('mobile-menu-toggle');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+  
+    toggleBtn.onclick = () => mobileMenu.classList.remove('hidden');
+    closeBtn.onclick = () => mobileMenu.classList.add('hidden');
+  
+    function toggleDropdown() {
+      dropdownMenu.classList.toggle('hidden');
+    }
+  </script>
+  
+</body>
+</html>
