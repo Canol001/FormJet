@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Watch Demo Card</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #dbeafe, #eef2ff);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+
+  <div class="w-full max-w-md rounded-2xl border border-white/30 shadow-2xl backdrop-blur-md bg-white/10 overflow-hidden relative">
+    
+    <!-- Optional Glass Shine -->
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+      <div class="absolute top-0 left-0 w-full h-full bg-white/5 rounded-2xl"></div>
+    </div>
+
+    <!-- Video Demo -->
+    <video autoplay muted loop playsinline class="w-full h-auto relative z-10">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+  </div>
+
+</body>
+</html>

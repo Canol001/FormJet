@@ -6,6 +6,16 @@
   <title>FormJet - Simple Email Sending Platform</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Optional Video CSS (makes sure it's styled well) -->
+<style>
+  .hero-video {
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 36rem; /* lg */
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
 </head>
 <body class="font-sans antialiased text-gray-800 bg-gray-50">
   <!-- Navigation Bar -->
@@ -72,6 +82,8 @@
 <div class="bg-gradient-to-b from-blue-200 via-indigo-50 to-white min-h-dvh flex items-start pt-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full" style="margin-top: 70px;">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      
+      <!-- Left Text Content -->
       <div>
         <h1 class="text-5xl font-extrabold text-gray-900 sm:text-6xl tracking-tight lg:text-7xl leading-tight">
           Email sending made <span class="text-indigo-600">simple</span>.
@@ -83,22 +95,64 @@
           <a href="/register" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-md shadow-md text-base sm:text-lg">
             Get Started
           </a>
-          <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50">
+          <button id="watchDemoBtn" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50">
             Watch Demo <i class="fas fa-play-circle ml-2"></i>
-          </a>
+          </button>
         </div>
       </div>
-      <div class="mt-10 md:mt-0">
+
+      <!-- Right Image or Video -->
+      <div class="mt-10 md:mt-0 relative">
+        <div id="heroMedia">
+          <img 
+            src="images/Emails-bro.svg" 
+            alt="FormJet Dashboard" 
+            class="rounded-lg w-full max-w-md md:max-w-lg lg:max-w-xl mx-auto md:mx-0"
+          >
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- JS to Handle Video and Button Swap -->
+<script>
+  const watchDemoBtn = document.getElementById('watchDemoBtn');
+  const mediaContainer = document.getElementById('heroMedia');
+
+  watchDemoBtn.addEventListener('click', function () {
+    const isVideoPlaying = mediaContainer.querySelector('video');
+    
+    if (isVideoPlaying) {
+      // If video is playing, stop the video and show the image again
+      const video = mediaContainer.querySelector('video');
+      video.pause();
+      video.remove(); // Remove video element
+
+      // Restore the image and change button text back to "Watch Demo"
+      mediaContainer.innerHTML = `
         <img 
           src="images/Emails-bro.svg" 
           alt="FormJet Dashboard" 
           class="rounded-lg w-full max-w-md md:max-w-lg lg:max-w-xl mx-auto md:mx-0"
         >
-      </div>
-      
-    </div>
-  </div>
-</div>
+      `;
+      watchDemoBtn.innerHTML = 'Watch Demo <i class="fas fa-play-circle ml-2"></i>'; // Reset button text
+    } else {
+      // If no video is playing, load the video and change the button text
+      mediaContainer.innerHTML = `
+        <video class="hero-video" autoplay muted loop playsinline>
+          <source src="videos/hero.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      `;
+      watchDemoBtn.innerHTML = 'Stop Video <i class="fas fa-stop-circle ml-2"></i>'; // Change button to "Stop Video"
+    }
+  });
+</script>
+
 
 
 
