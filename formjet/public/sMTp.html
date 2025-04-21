@@ -2,24 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>FormJet - Documentation</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    body {
+    body{
       box-sizing: border-box;
-      overflow-x: hidden; /* Prevent horizontal scrolling */
-      margin-right: 0;
-    }
-    * {
-      box-sizing: inherit;
-    }
-    .code-block {
-      overflow-x: auto; /* Fallback for very long lines */
-      white-space: pre-wrap; /* Wrap long lines while preserving spaces */
-      word-break: break-word; /* Break long words like URLs */
-      tab-size: 2; /* Ensure consistent tab spacing */
     }
   </style>
 </head>
@@ -35,6 +24,7 @@
           </div>
           <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
             <a href="/" class="text-gray-900 font-medium hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-500 px-1 pt-1">Home</a>
+            <!-- <a href="#" class="text-gray-900 font-medium hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-500 px-1 pt-1">Features</a> -->
             <a href="/docs" class="text-gray-900 font-medium border-b-2 border-indigo-500 px-1 pt-1">Documentation</a>
             <a href="/support" class="text-gray-900 font-medium hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-500 px-1 pt-1">Support</a>
           </div>
@@ -56,7 +46,7 @@
     </div>
 
     <!-- Mobile Fullscreen Menu -->
-    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-white z-50 hidden flex-col p-6 space-y-4 sm:hidden overflow-y-auto">
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-white z-50 hidden flex-col p-6 space-y-4 sm:hidden">
       <div class="flex justify-between items-center">
         <div class="text-2xl font-bold text-blue-600">Form<span class="text-indigo-500">Jet</span></div>
         <button id="mobile-menu-close" class="text-gray-600 hover:text-gray-900 text-2xl">
@@ -64,6 +54,17 @@
         </button>
       </div>
       <a href="/" class="block text-lg font-medium text-gray-800 hover:text-indigo-600">Home</a>
+
+      <!-- Dropdown Item -->
+      <!-- <div class="space-y-2">
+        <button class="w-full text-left text-lg font-medium text-gray-800 hover:text-indigo-600" onclick="toggleDropdown()">Features ▼</button>
+        <div id="dropdown-menu" class="ml-4 space-y-2 hidden">
+          <a href="#" class="block text-gray-700 hover:text-indigo-500">Feature 1</a>
+          <a href="#" class="block text-gray-700 hover:text-indigo-500">Feature 2</a>
+          <a href="#" class="block text-gray-700 hover:text-indigo-500">Feature 3</a>
+        </div>
+      </div> -->
+
       <a href="/docs" class="block text-lg font-medium text-gray-800 hover:text-indigo-600">Documentation</a>
       <a href="/support" class="block text-lg font-medium text-gray-800 hover:text-indigo-600">Support</a>
       <a href="/login" class="block text-lg font-medium text-gray-800 hover:text-indigo-600">Sign in</a>
@@ -89,7 +90,7 @@
       <!-- Sidebar Navigation -->
       <div class="flex flex-col lg:flex-row gap-8">
         <aside class="lg:w-1/4">
-          <nav class="sticky top-4 space-y-4 w-full">
+          <nav class="sticky top-4 space-y-4">
             <h3 class="text-lg font-semibold text-gray-900">Table of Contents</h3>
             <ul class="space-y-2 text-gray-600">
               <li><a href="#getting-started" class="hover:text-indigo-600">Getting Started</a></li>
@@ -101,7 +102,7 @@
         </aside>
 
         <!-- Main Documentation Content -->
-        <main class="lg:w-3/4 space-y-12 w-full">
+        <main class="lg:w-3/4 space-y-12">
           <!-- Getting Started -->
           <section id="getting-started">
             <h2 class="text-3xl font-bold text-gray-900 mb-6">Getting Started</h2>
@@ -123,29 +124,29 @@
             <p class="text-gray-600 mb-4">
               To collect submissions, add the FormJet endpoint to your HTML form. Here's an example:
             </p>
-            <div class="bg-gray-900 text-white rounded-lg p-4 font-mono text-xs mb-4">
+            <div class="bg-gray-900 text-white rounded-lg p-4 font-mono text-sm mb-4">
               <span class="text-green-500">&lt;!-- Add this form to your website --&gt;</span><br>
               <span class="text-blue-400">&lt;form</span> <span class="text-white">action=</span><span class="text-orange-400">"https://formjet.onrender.com/send/12345"</span> <span class="text-white">method=</span><span class="text-orange-400">"POST"</span><span class="text-blue-400">&gt;</span><br>
 
-            <span class="text-blue-400">&nbsp;&nbsp;&lt;label</span> <span class="text-white">for=</span><span class="text-orange-400">"name"</span><span class="text-blue-400">&gt;</span>
-            <span class="text-white">Your name:</span>
-            <span class="text-blue-400">&lt;/label&gt;</span><br>
-            <span class="text-blue-400">&nbsp;&nbsp;&nbsp;&lt;input</span> <span class="text-white">type=</span><span class="text-orange-400">"text"</span> <span class="text-white">name=</span><span class="text-orange-400">"name"</span> <span class="text-white">id=</span><span class="text-orange-400">"name"</span><span class="text-blue-400">&gt;</span><br><br>
+    <span class="text-blue-400">&nbsp;&nbsp;&lt;label</span> <span class="text-white">for=</span><span class="text-orange-400">"name"</span><span class="text-blue-400">&gt;</span>
+    <span class="text-white">Your name:</span>
+    <span class="text-blue-400">&lt;/label&gt;</span><br>
+    <span class="text-blue-400">&nbsp;&nbsp;&nbsp;&lt;input</span> <span class="text-white">type=</span><span class="text-orange-400">"text"</span> <span class="text-white">name=</span><span class="text-orange-400">"name"</span> <span class="text-white">id=</span><span class="text-orange-400">"name"</span><span class="text-blue-400">&gt;</span><br><br>
 
 
-            <span class="text-blue-400">&nbsp;&nbsp;&lt;label</span> <span class="text-white">for=</span><span class="text-orange-400">"email"</span><span class="text-blue-400">&gt;</span>
-            <span class="text-white">Your email:</span>
-            <span class="text-blue-400">&lt;/label&gt;</span><br>
-            <span class="text-blue-400">&nbsp;&nbsp;&nbsp;&lt;input</span> <span class="text-white">type=</span><span class="text-orange-400">"email"</span> <span class="text-white">name=</span><span class="text-orange-400">"email"</span> <span class="text-white">id=</span><span class="text-orange-400">"email"</span><span class="text-blue-400">&gt;</span><br><br>
+    <span class="text-blue-400">&nbsp;&nbsp;&lt;label</span> <span class="text-white">for=</span><span class="text-orange-400">"email"</span><span class="text-blue-400">&gt;</span>
+    <span class="text-white">Your email:</span>
+    <span class="text-blue-400">&lt;/label&gt;</span><br>
+    <span class="text-blue-400">&nbsp;&nbsp;&nbsp;&lt;input</span> <span class="text-white">type=</span><span class="text-orange-400">"email"</span> <span class="text-white">name=</span><span class="text-orange-400">"email"</span> <span class="text-white">id=</span><span class="text-orange-400">"email"</span><span class="text-blue-400">&gt;</span><br><br>
 
-            <span class="text-blue-400">&nbsp;&nbsp;&lt;label</span> <span class="text-white">for=</span><span class="text-orange-400">"message"</span><span class="text-blue-400">&gt;</span>
-            <span class="text-white">Your message:</span>
-            <span class="text-blue-400">&lt;/label&gt;</span><br>
-            <span class="text-blue-400">&nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea</span> <span class="text-white">name=</span><span class="text-orange-400">"message"</span> <span class="text-white">id=</span><span class="text-orange-400">"message"</span><span class="text-blue-400">&gt;&lt;/textarea&gt;</span><br>
+    <span class="text-blue-400">&nbsp;&nbsp;&lt;label</span> <span class="text-white">for=</span><span class="text-orange-400">"message"</span><span class="text-blue-400">&gt;</span>
+    <span class="text-white">Your message:</span>
+    <span class="text-blue-400">&lt;/label&gt;</span><br>
+    <span class="text-blue-400">&nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea</span> <span class="text-white">name=</span><span class="text-orange-400">"message"</span> <span class="text-white">id=</span><span class="text-orange-400">"message"</span><span class="text-blue-400">&gt;&lt;/textarea&gt;</span><br>
 
-            <span class="text-green-500">&nbsp;&nbsp;&lt;!-- your other form fields go here --&gt;</span><br>
-            <span class="text-blue-400">&nbsp;&nbsp;&lt;button</span> <span class="text-white">type=</span><span class="text-orange-400">"submit"</span><span class="text-blue-400">&gt;</span><span class="text-white">Send</span><span class="text-blue-400">&lt;/button&gt;</span><br>
-            <span class="text-blue-400">&lt;/form&gt;</span>
+    <span class="text-green-500">&nbsp;&nbsp;&lt;!-- your other form fields go here --&gt;</span><br>
+    <span class="text-blue-400">&nbsp;&nbsp;&lt;button</span> <span class="text-white">type=</span><span class="text-orange-400">"submit"</span><span class="text-blue-400">&gt;</span><span class="text-white">Send</span><span class="text-blue-400">&lt;/button&gt;</span><br>
+    <span class="text-blue-400">&lt;/form&gt;</span>
             </div>
             <p class="text-gray-600">
               Replace the `action` URL with the endpoint provided in your FormJet dashboard.
@@ -158,21 +159,19 @@
             <p class="text-gray-600 mb-4">
               FormJet provides an API for programmatically managing forms and submissions. Here's how to submit a form using the API:
             </p>
-            
-              <div class="bg-gray-900 text-white rounded-lg p-2 sm:p-4 font-mono text-xs sm:text-base mb-4 ">
-
+            <div class="bg-gray-900 text-white rounded-lg p-4 font-mono text-sm mb-4">
               <span class="text-green-500">// Example API request to submit a form</span><br>
               <span class="text-blue-400">fetch</span>(<span class="text-orange-400">'https://formjet.onrender.com/send/12345'</span>, {<br>
-              <span class="pl-2 text-white">method:</span> <span class="text-orange-400">'POST'</span>,<br>
-              <span class="pl-2 text-white">headers:</span> { <span class="text-orange-400">'Content-Type'</span>: <span class="text-orange-400">'application/json'</span> },<br>
-              <span class="pl-2 text-white">body:</span> <span class="text-blue-400">JSON.stringify</span>({<br>
-              <span class="pl-4 text-white">name:</span> <span class="text-orange-400">'owano canol'</span>,<br>
-              <span class="pl-4 text-white">email:</span> <span class="text-orange-400">'canolowana6@gmail.com'</span>,<br>
-              <span class="pl-4 text-white">message:</span> <span class="text-orange-400">'Hello, FormJet!'</span><br>
-              <span class="pl-2 text-white">})</span><br>
+              <span class="text-white">  method</span>: <span class="text-orange-400">'POST'</span>,<br>
+              <span class="text-white">  headers</span>: { <span class="text-orange-400">'Content-Type'</span>: <span class="text-orange-400">'application/json'</span> },<br>
+              <span class="text-white">  body</span>: <span class="text-blue-400">JSON.stringify</span>({<br>
+              <span class="text-white">    name</span>: <span class="text-orange-400">'owano canol'</span>,<br>
+              <span class="text-white">    email</span>: <span class="text-orange-400">'canolowana6@gmail.com'</span>,<br>
+              <span class="text-white">    message</span>: <span class="text-orange-400">'Hello, FormJet!'</span><br>
+              <span class="text-white">  })</span><br>
               <span class="text-white">})</span><br>
-              <span class="pl-2 text-blue-400">.then</span>(<span class="text-white">response</span> => <span class="text-white">response.json</span>())<br>
-              <span class="pl-2 text-blue-400">.then</span>(<span class="text-white">data</span> => <span class="text-blue-400">console.log</span>(<span class="text-white">data</span>));
+              .<span class="text-blue-400">then</span>(<span class="text-white">response</span> => <span class="text-white">response.json</span>())<br>
+              .<span class="text-blue-400">then</span>(<span class="text-white">data</span> => <span class="text-blue-400">console.log</span>(<span class="text-white">data</span>));
             </div>
             <p class="text-gray-600">
               For more details on the API, including authentication and endpoints, visit the <a href="#" class="text-indigo-600 hover:text-indigo-700">FormJet API documentation</a>.
