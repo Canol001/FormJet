@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FormJet - Our Team</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+    * {
+      box-sizing: inherit;
+    }
+    .team-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    .social-icons a {
+      transition: color 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #4f46e5; /* Indigo-600 */
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+  <!-- Navigation Bar -->
+  <nav class="bg-blue-200 text-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <!-- Logo and Links -->
+        <div class="flex items-center">
+          <div class="flex-shrink-0 text-2xl font-bold text-blue-600">
+            Form<span class="text-indigo-500">Jet</span>
+          </div>
+          <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <a href="/" class="text-gray-900 font-medium hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-500 px-1 pt-1">Home</a>
+            <a href="/docs" class="text-gray-900 font-medium hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-500 px-1 pt-1">Documentation</a>
+            <a href="/team" class="text-gray-900 font-medium border-b-2 border-indigo-500 px-1 pt-1">Our Team</a>
+            <a href="/support" class="text-gray-900 font-medium hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-500 px-1 pt-1">Support</a>
+          </div>
+        </div>
+
+        <!-- Desktop buttons -->
+        <div class="hidden sm:ml-6 sm:flex sm:items-center">
+          <a href="/login" class="text-gray-800 hover:text-gray-900 px-3 py-2 text-sm font-medium">Sign in</a>
+          <a href="/register" class="ml-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign up</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="-mr-2 flex items-center sm:hidden">
+          <button id="mobile-menu-toggle" class="bg-white p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none">
+            <i class="fas fa-bars text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Fullscreen Menu -->
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-white z-50 hidden flex-col p-6 space-y-4 sm:hidden overflow-y-auto">
+      <div class="flex justify-between items-center">
+        <div class="text-2xl font-bold text-blue-600">Form<span class="text-indigo-500">Jet</span></div>
+        <button id="mobile-menu-close" class="text-gray-600 hover:text-gray-900 text-2xl">
+          ×
+        </button>
+      </div>
+      <a href="/" class="block text-lg font-medium text-gray-800 hover:text-indigo-600">Home</a>
+      <a href="/docs" class="block text-lg font-medium text-gray-800 hover:text-indigo-600">Documentation</a>
+      <a href="/team" class="block text-lg font-medium text-gray-800 hover:text-indigo-600">Our Team</a>
+      <a href="/support" class="block text-lg font-medium text-gray-800 hover:text-indigo-600">Support</a>
+      <a href="/login" class="block text-lg font-medium text-gray-800 hover:text-indigo-600">Sign in</a>
+      <a href="/register" class="block bg-indigo-600 text-white text-center px-4 py-2 rounded-md font-medium hover:bg-indigo-700">Sign up</a>
+    </div>
+  </nav>
+
+  <!-- Team Header -->
+  <div class="bg-gradient-to-b from-blue-200 to-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl lg:text-6xl tracking-tight">
+        Meet the FormJet Team
+      </h1>
+      <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+        We're a passionate group of innovators building the future of email forms. Get to know the faces behind FormJet!
+      </p>
+    </div>
+  </div>
+
+  <!-- Team Content -->
+  <div class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Team Member 1: CEO -->
+        <div class="team-card bg-gray-50 rounded-lg shadow-md overflow-hidden">
+          <img src="images/public.jpg" alt="Alex Thompson" class="w-full h-48 object-cover">
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-semibold text-gray-900">Owano Canol</h3>
+            <p class="text-indigo-600 font-medium">Founder</p>
+            <p class="mt-2 text-gray-600 text-sm">
+              Canol founded FormJet with a vision to simplify email forms for personal use and businesses. With over 3 years in tech leadership, he loves hiking and sci-fi novels.
+            </p>
+            <div class="mt-4 flex justify-center space-x-4 social-icons">
+              <a href="#" class="text-gray-500 hover:text-indigo-600" aria-label="Alex Thompson LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-indigo-600" aria-label="Alex Thompson Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 2: Lead Developer -->
+        <div class="team-card bg-gray-50 rounded-lg shadow-md overflow-hidden">
+          <img src="https://via.placeholder.com/300x300?text=Sofia+Martinez" alt="Sofia Martinez" class="w-full h-48 object-cover">
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-semibold text-gray-900">Sofia Martinez</h3>
+            <p class="text-indigo-600 font-medium">Lead Developer</p>
+            <p class="mt-2 text-gray-600 text-sm">
+              Sofia is the coding genius behind FormJet’s backend. With a knack for solving complex problems, she enjoys playing guitar and brewing coffee.
+            </p>
+            <div class="mt-4 flex justify-center space-x-4 social-icons">
+              <a href="#" class="text-gray-500 hover:text-indigo-600" aria-label="Sofia Martinez LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-indigo-600" aria-label="Sofia Martinez Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 3: UI/UX Designer -->
+        <div class="team-card bg-gray-50 rounded-lg shadow-md overflow-hidden">
+          <img src="https://via.placeholder.com/300x300?text=Ryan+Patel" alt="Ryan Patel" class="w-full h-48 object-cover">
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-semibold text-gray-900">Ryan Patel</h3>
+            <p class="text-indigo-600 font-medium">UI/UX Designer</p>
+            <p class="mt-2 text-gray-600 text-sm">
+              Ryan designs FormJet’s sleek interfaces. A pixel-perfectionist, he’s passionate about user experience and spends his weekends sketching landscapes.
+            </p>
+            <div class="mt-4 flex justify-center space-x-4 social-icons">
+              <a href="#" class="text-gray-500 hover:text-indigo-600" aria-label="Ryan Patel LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-indigo-600" aria-label="Ryan Patel Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 4: Marketing Specialist -->
+        <div class="team-card bg-gray-50 rounded-lg shadow-md overflow-hidden">
+          <img src="https://via.placeholder.com/300x300?text=Emily+Chen" alt="Emily Chen" class="w-full h-48 object-cover">
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-semibold text-gray-900">Emily Chen</h3>
+            <p class="text-indigo-600 font-medium">Marketing Specialist</p>
+            <p class="mt-2 text-gray-600 text-sm">
+              Emily spreads the word about FormJet. A storytelling expert, she loves connecting with users and can be found exploring local food markets.
+            </p>
+            <div class="mt-4 flex justify-center space-x-4 social-icons">
+              <a href="#" class="text-gray-500 hover:text-indigo-600" aria-label="Emily Chen LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-indigo-600" aria-label="Emily Chen Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action Section -->
+      <div class="mt-16 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Join Our Team</h2>
+        <p class="text-gray-600 max-w-xl mx-auto mb-6">
+          We’re always looking for talented individuals to join FormJet. If you’re passionate about building innovative email solutions, we’d love to hear from you!
+        </p>
+        <a href="/careers" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-md font-medium">
+          View Open Positions
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white">
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Brand + Blurb -->
+        <div>
+          <a href="#" class="text-2xl font-bold text-indigo-600">Form<span class="text-gray-900">Jet</span></a>
+          <p class="mt-4 text-gray-500">
+            Powerful email platform to send, track, and grow.
+          </p>
+        </div>
+
+        <!-- Column 1 -->
+        <div>
+          <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Product</h4>
+          <ul class="mt-4 space-y-3">
+            <li><a href="#" class="text-gray-600 hover:text-gray-900">Features</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-gray-900">Pricing</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-gray-900">Templates</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2 -->
+        <div>
+          <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Resources</h4>
+          <ul class="mt-4 space-y-3">
+            <li><a href="#" class="text-gray-600 hover:text-gray-900">Documentation</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-gray-900">Guides</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-gray-900">API Status</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Signup -->
+        <div>
+          <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Stay up to date</h4>
+          <p class="mt-4 text-gray-500 text-sm">Get the latest news and updates straight to your inbox.</p>
+          <form class="mt-4 flex">
+            <input
+              type="email"
+              placeholder="Your email"
+              class="w-full rounded-l-md border border-gray-300 px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+            <button
+              type="submit"
+              class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-r-md font-medium"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="mt-12 border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-sm text-gray-500">© 2025 SpacyFire. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a href="#" class="text-gray-400 hover:text-gray-500" aria-label="Twitter">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-gray-500" aria-label="Facebook">
+            <i class="fab fa-facebook-f fa-lg"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-gray-500" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in fa-lg"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-gray-500" aria-label="Instagram">
+            <i class="fab fa-instagram fa-lg"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('mobile-menu-toggle');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggleBtn.onclick = () => mobileMenu.classList.remove('hidden');
+    closeBtn.onclick = () => mobileMenu.classList.add('hidden');
+  </script>
+</body>
+</html>
