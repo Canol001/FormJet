@@ -5,6 +5,8 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const mailRoutes = require('./routes/mailRoutes');
 const validateForm = require('./middleware/validateForm');
+const authRoutes = require('./routes/authRoutes'); // add this line
+
 
 dotenv.config();
 
@@ -57,6 +59,9 @@ app.use('/send', validateForm);
 
 // API Routes
 app.use('/send', mailRoutes);
+
+app.use('/api', authRoutes);
+
 
 // Start server
 const PORT = process.env.PORT || 5000;
