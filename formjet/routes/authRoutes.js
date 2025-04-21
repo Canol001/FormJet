@@ -27,8 +27,16 @@ router.post('/register', async (req, res) => {
     // Save the user to the database
     await newUser.save();
 
-    // Send success response
-    res.status(201).json({ message: 'User registered successfully' });
+    // Set session
+    req.session.user = {
+      userId: newUser._id,
+      email: newUser.email,
+      firstName: newUser.firstName,
+      lastName: newUser.lastName
+    };
+
+    // Redirect to the dashboard
+    res.redirect('/dashboard');  // Change this to the route where your dashboard is served
   } catch (error) {
     console.error(error);  // Log the error for debugging
     res.status(500).json({ message: 'Server error' });

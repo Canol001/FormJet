@@ -20,12 +20,14 @@
       pointer-events: auto;
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="bg-gradient-to-b from-blue-200 to-blue-20 min-h-screen text-gray-800 font-sans">
+<body class="bg-blue-200 min-h-screen text-gray-800 font-sans">
 
   <!-- Navbar -->
-  <nav class="fixed top-0 left-0 w-full bg-blue-190">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+  <nav class="fixed top-0 left-0 w-full">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center z-30 bg-blue-150">
+
       <div class="flex items-center space-x-4">
         <button id="sidebar-toggle" class="lg:hidden text-gray-700">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,13 +37,17 @@
         </button>
         <span class="text-2xl font-bold text-blue-600">FormJet</span>
       </div>
+
       <div class="hidden md:flex items-center space-x-6">
         <span class="text-sm font-medium">CANOL OKOTH</span>
-        <a href="#" class="text-sm text-blue-600 hover:text-blue-700">Forms</a>
-        <a href="#" class="text-sm text-blue-600 hover:text-blue-700">Account</a>
-        <img src="https://via.placeholder.com/20" class="w-5 h-5" alt="Bell" />
-        <img src="https://via.placeholder.com/20" class="w-5 h-5" alt="Logout" />
+        <a href="#" class="text-blue-600 hover:text-blue-700">
+          <i class="fas fa-bell text-lg"></i>
+        </a>
+        <a href="#" class="text-blue-600 hover:text-blue-700">
+          <i class="fas fa-sign-out-alt text-lg"></i>
+        </a>
       </div>
+
     </div>
   </nav>
 
@@ -98,54 +104,11 @@
 
 
       
-      <!-- Submissions -->
-      <div class="bg-white rounded-xl shadow p-4 md:p-6">
-        <div class="flex justify-between items-center mb-4">
-          <h3 class="text-xs font-semibold text-gray-500 uppercase">Recent Submissions</h3>
-          <a href="#" class="text-sm text-blue-600 hover:text-blue-700">View All</a>
-        </div>
-        <div class="overflow-x-auto">
-          <table class="w-full text-sm text-left">
-            <thead class="bg-gray-50 text-gray-500 uppercase text-xs">
-              <tr>
-                <th class="px-4 py-2">Submission ID</th>
-                <th class="px-4 py-2">Date</th>
-                <th class="px-4 py-2">Email</th>
-                <th class="px-4 py-2">Message</th>
-                <th class="px-4 py-2">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="border-b hover:bg-gray-50">
-                <td class="px-4 py-2">SUB12345</td>
-                <td class="px-4 py-2">2025-04-20 14:30</td>
-                <td class="px-4 py-2">user1@example.com</td>
-                <td class="px-4 py-2 truncate max-w-xs">Interested in your services...</td>
-                <td class="px-4 py-2 text-blue-600 hover:text-blue-700"><a href="#">View</a></td>
-              </tr>
-              <tr class="border-b hover:bg-gray-50">
-                <td class="px-4 py-2">SUB12346</td>
-                <td class="px-4 py-2">2025-04-19 09:15</td>
-                <td class="px-4 py-2">user2@example.com</td>
-                <td class="px-4 py-2 truncate max-w-xs">Please provide more details...</td>
-                <td class="px-4 py-2 text-blue-600 hover:text-blue-700"><a href="#">View</a></td>
-              </tr>
-              <tr class="hover:bg-gray-50">
-                <td class="px-4 py-2">SUB12347</td>
-                <td class="px-4 py-2">2025-04-18 16:45</td>
-                <td class="px-4 py-2">user3@example.com</td>
-                <td class="px-4 py-2 truncate max-w-xs">Question about pricing...</td>
-                <td class="px-4 py-2 text-blue-600 hover:text-blue-700"><a href="#">View</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
     </main>
 
     <!-- Sidebar -->
 <aside id="sidebar"
-class="fixed top-0 right-0 w-72 h-full bg-white shadow transform translate-x-full lg:translate-x-0 lg:static lg:h-auto p-4 lg:p-6 transition-transform z-30">
+class="fixed top-0 right-0 w-72 h-full bg-white shadow transform translate-x-full rounded-xl lg:translate-x-0 lg:static lg:h-auto p-4 lg:p-6 transition-transform z-20">
 <button id="add-new-btn"
   class="w-full mb-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-300 transition-all">
   + Add New
