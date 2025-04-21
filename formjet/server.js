@@ -27,6 +27,14 @@ app.get('/example-form', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'example-form.html'));
 });
 
+app.get('/t&cs', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'terms-and-conditions.html'));
+});
+
+app.get('/privacy', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'privacy-policy.html'));
+});
+
 // These routes match your navbar links
 app.get('/docs', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'docs.html'));
