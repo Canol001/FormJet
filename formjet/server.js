@@ -15,7 +15,7 @@ connectDB();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Serve static assets like CSS/JS/images
+// Serve static assets
 app.use(express.static(path.join(__dirname, 'public')));
 
 // HTML Page Routes
@@ -23,12 +23,25 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.get('/how-it-works', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'how-it-works.html'));
-});
-
 app.get('/example-form', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'example-form.html'));
+});
+
+// These routes match your navbar links
+app.get('/docs', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'docs.html'));
+});
+
+app.get('/support', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'support.html'));
+});
+
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
+app.get('/register', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'register.html'));
 });
 
 // Middleware to validate form

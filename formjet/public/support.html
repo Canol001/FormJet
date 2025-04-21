@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FormJet - Support</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+  <!-- Navigation Bar -->
+  <nav class="bg-blue-200 text-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <!-- Logo and Links -->
+        <div class="flex items-center">
+          <div class="flex-shrink-0 text-2xl font-bold text-blue-600">
+            Form<span class="text-indigo-500">Jet</span>
+          </div>
+          <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <a href="/" class="text-gray-900 font-medium hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-500 px-1 pt-1">Home</a>
+            <!-- <a href="#" class="text-gray-900 font-medium hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-500 px-1 pt-1">Features</a> -->
+            <a href="/docs" class="text-gray-900 font-medium hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-500 px-1 pt-1">Documentation</a>
+            <a href="/support" class="text-gray-900 font-medium border-b-2 border-indigo-500 px-1 pt-1">Support</a>
+          </div>
+        </div>
+
+        <!-- Desktop buttons -->
+        <div class="hidden sm:ml-6 sm:flex sm:items-center">
+          <a href="/login" class="text-gray-800 hover:text-gray-900 px-3 py-2 text-sm font-medium">Sign in</a>
+          <a href="/register" class="ml-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium">Sign up</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="-mr-2 flex items-center sm:hidden">
+          <button id="mobile-menu-toggle" class="bg-white p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none">
+            <i class="fas fa-bars text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Fullscreen Menu -->
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-white z-50 hidden flex-col p-6 space-y-4 sm:hidden">
+      <div class="flex justify-between items-center">
+        <div class="text-2xl font-bold text-blue-600">Form<span class="text-indigo-500">Jet</span></div>
+        <button id="mobile-menu-close" class="text-gray-600 hover:text-gray-900 text-2xl">
+          ×
+        </button>
+      </div>
+      <a href="/" class="block text-lg font-medium text-gray-800 hover:text-indigo-600">Home</a>
+
+      <!-- Dropdown Item -->
+      <!-- <div class="space-y-2">
+        <button class="w-full text-left text-lg font-medium text-gray-800 hover:text-indigo-600" onclick="toggleDropdown()">Features ▼</button>
+        <div id="dropdown-menu" class="ml-4 space-y-2 hidden">
+          <a href="#" class="block text-gray-700 hover:text-indigo-500">Feature 1</a>
+          <a href="#" class="block text-gray-700 hover:text-indigo-500">Feature 2</a>
+          <a href="#" class="block text-gray-700 hover:text-indigo-500">Feature 3</a>
+        </div>
+      </div> -->
+
+      <a href="/docs" class="block text-lg font-medium text-gray-800 hover:text-indigo-600">Documentation</a>
+      <a href="/support" class="block text-lg font-medium text-gray-800 hover:text-indigo-600">Support</a>
+      <a href="/login" class="block text-lg font-medium text-gray-800 hover:text-indigo-600">Sign in</a>
+      <a href="/register" class="block bg-indigo-600 text-white text-center px-4 py-2 rounded-md font-medium hover:bg-indigo-700">Sign up</a>
+    </div>
+  </nav>
+
+  <!-- Support Header -->
+  <div class="bg-gradient-to-b from-blue-200 to-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl lg:text-6xl tracking-tight">
+        FormJet Support
+      </h1>
+      <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+        We're here to help! Find answers to common questions or reach out to our support team.
+      </p>
+    </div>
+  </div>
+
+  <!-- Support Content -->
+  <div class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- FAQs Section -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Frequently Asked Questions</h2>
+        <div class="space-y-6">
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">How do I set up a form with FormJet?</h3>
+            <p class="text-gray-600">
+              Create a form in your dashboard, copy the provided endpoint URL, and add it to your HTML form's `action` attribute with `method="POST"`. Refer to the <a href="/docs" class="text-indigo-600 hover:text-indigo-700">Documentation</a> for a detailed guide.
+            </p>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Why am I not receiving email notifications?</h3>
+            <p class="text-gray-600">
+              Check your spam folder and ensure the recipient email is correctly set in your form settings. If the issue persists, contact support below.
+            </p>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Can I integrate FormJet with other tools?</h3>
+            <p class="text-gray-600">
+              Yes! FormJet supports direct integrations with various tools. Check the <a href="/docs" class="text-indigo-600 hover:text-indigo-700">Documentation</a> for a list of supported integrations.
+            </p>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">How do I access my form submissions?</h3>
+            <p class="text-gray-600">
+              Submissions are saved to your FormJet Inbox, accessible from your dashboard. You can view, analyze, and export them as needed.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form Section -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Contact Support</h2>
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <!-- Form Mockup -->
+          <div class="w-full md:w-1/2 flex justify-center">
+            <div class="bg-gray-900 text-white p-6 rounded-2xl shadow-lg w-full max-w-md">
+              <form action="https://formjet.onrender.com/send/12345">
+                <label class="block mb-4">
+                  <span class="text-sm text-gray-300">Name</span>
+                  <input type="text" placeholder="Your Name" class="mt-1 block w-full rounded-md bg-gray-800 text-white border-none px-4 py-2 placeholder-gray-500" />
+                </label>
+                <label class="block mb-4">
+                  <span class="text-sm text-gray-300">Email</span>
+                  <input type="email" placeholder="Your Email" class="mt-1 block w-full rounded-md bg-gray-800 text-white border-none px-4 py-2 placeholder-gray-500" />
+                </label>
+                <label class="block mb-4">
+                  <span class="text-sm text-gray-300">Message</span>
+                  <textarea placeholder="Describe your issue..." class="mt-1 block w-full rounded-md bg-gray-800 text-white border-none px-4 py-2 placeholder-gray-500 h-32"></textarea>
+                </label>
+                <button class="mt-2 w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+          <!-- Contact Info -->
+          <div class="w-full md:w-1/2">
+            <p class="text-gray-600 mb-4">
+              Need help? Fill out the form, and our support team will get back to you within 24 hours. You can also reach us via email or live chat.
+            </p>
+            <ul class="space-y-4 text-gray-600">
+              <li class="flex items-center gap-2">
+                <i class="fas fa-envelope text-indigo-600"></i>
+                <a href="mailto:support@formjet.com" class="hover:text-indigo-600">support@formjet.com</a>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-comment-dots text-indigo-600"></i>
+                <button id="live-chat-toggle" class="text-gray-600 hover:text-indigo-600">Start Live Chat</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Support Resources -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Support Resources</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-50 rounded-lg p-6 text-center">
+            <i class="fas fa-book text-indigo-600 text-3xl mb-4"></i>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Documentation</h3>
+            <p class="text-gray-600 mb-4">
+              Explore our comprehensive documentation for setup guides, API references, and more.
+            </p>
+            <a href="/docs" class="text-indigo-600 hover:text-indigo-700 font-medium">View Documentation</a>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-6 text-center">
+            <i class="fas fa-users text-indigo-600 text-3xl mb-4"></i>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Community Forum</h3>
+            <p class="text-gray-600 mb-4">
+              Join our community to ask questions, share tips, and connect with other FormJet users.
+            </p>
+            <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium">Visit Forum</a>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-6 text-center">
+            <i class="fas fa-video text-indigo-600 text-3xl mb-4"></i>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Video Tutorials</h3>
+            <p class="text-gray-600 mb-4">
+              Watch step-by-step video tutorials to get the most out of FormJet.
+            </p>
+            <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium">Watch Tutorials</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Live Chat Popup -->
+  <div id="live-chat" class="fixed bottom-4 right-4 w-80 bg-white rounded-lg shadow-lg p-4 hidden z-50">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="text-lg font-semibold text-gray-900">Live Chat</h3>
+      <button id="live-chat-close" class="text-gray-600 hover:text-gray-900">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="bg-gray-100 p-4 rounded-lg h-48 overflow-y-auto mb-4">
+      <p class="text-gray-600 italic">Chat with our support team...</p>
+    </div>
+    <form>
+      <input type="text" placeholder="Type your message..." class="w-full rounded-md border border-gray-300 px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-2">
+      <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-md">
+        Send
+      </button>
+    </form>
+  </div>
+
+  <!-- Modern White Footer -->
+  <footer class="bg-white">
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Brand + Blurb -->
+        <div>
+          <a href="#" class="text-2xl font-bold text-indigo-600">Form<span class="text-gray-900">Jet</span></a>
+          <p class="mt-4 text-gray-500">
+            Powerful email platform to send, track, and grow.
+          </p>
+        </div>
+
+        <!-- Column 1 -->
+        <div>
+          <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Product</h4>
+          <ul class="mt-4 space-y-3">
+            <li><a href="#" class="text-gray-600 hover:text-gray-900">Features</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-gray-900">Pricing</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-gray-900">Templates</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2 -->
+        <div>
+          <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Resources</h4>
+          <ul class="mt-4 space-y-3">
+            <li><a href="#" class="text-gray-600 hover:text-gray-900">Documentation</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-gray-900">Guides</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-gray-900">API Status</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Signup -->
+        <div>
+          <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Stay up to date</h4>
+          <p class="mt-4 text-gray-500 text-sm">Get the latest news and updates straight to your inbox.</p>
+          <form class="mt-4 flex">
+            <input
+              type="email"
+              placeholder="Your email"
+              class="w-full rounded-l-md border border-gray-300 px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+            <button
+              type="submit"
+              class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-r-md font-medium"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="mt-12 border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-sm text-gray-500">© 2025 SpacyFire. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a href="#" class="text-gray-400 hover:text-gray-500" aria-label="Twitter">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-gray-500" aria-label="Facebook">
+            <i class="fab fa-facebook-f fa-lg"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-gray-500" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in fa-lg"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-gray-500" aria-label="Instagram">
+            <i class="fab fa-instagram fa-lg"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('mobile-menu-toggle');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const liveChatToggle = document.getElementById('live-chat-toggle');
+    const liveChatClose = document.getElementById('live-chat-close');
+    const liveChat = document.getElementById('live-chat');
+
+    toggleBtn.onclick = () => mobileMenu.classList.remove('hidden');
+    closeBtn.onclick = () => mobileMenu.classList.add('hidden');
+
+    function toggleDropdown() {
+      dropdownMenu.classList.toggle('hidden');
+    }
+
+    liveChatToggle.onclick = () => liveChat.classList.remove('hidden');
+    liveChatClose.onclick = () => liveChat.classList.add('hidden');
+  </script>
+</body>
+</html>
